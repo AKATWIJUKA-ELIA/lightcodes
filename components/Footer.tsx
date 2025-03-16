@@ -8,6 +8,7 @@ import { FaMessage } from 'react-icons/fa6'
 import { HiMiniServerStack } from 'react-icons/hi2'
 import { AiOutlineFileDone } from 'react-icons/ai'
 import { HiHome } from 'react-icons/hi'
+import { MdRecommend } from "react-icons/md";
 
 
 const footer = () => {
@@ -32,7 +33,9 @@ const footer = () => {
             </a>
 
             <h1 className='flex mx-auto -mt-5 '>
-                  Home
+                 <a href="#" >
+                        Home
+                </a> 
             </h1>
       </div>
 
@@ -40,13 +43,15 @@ const footer = () => {
       <div className='flex flex-col md:hidden' id='services'>
             <a    href="#testimonials"
             className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
-                  <HiMiniServerStack className='text-2xl icon-color flex'/>
+                  <MdRecommend className='text-2xl icon-color flex'/>
                   
             
             </a>
 
             <h1 className='flex  mx-auto -mt-5 '>
-                  Testimonials
+                  <a href="#testimonials" >
+                        Testimonials
+                </a> 
             </h1>
       </div>
      
@@ -62,7 +67,7 @@ const footer = () => {
             </a>
 
             <h1 className='flex mx-auto -mt-5 '>
-                  Projects
+                  <a href="#projects" >Projects</a>
             </h1>
       </div>
 
@@ -76,21 +81,21 @@ const footer = () => {
             </a>
 
             <h1 className='flex mx-auto -mt-5 '>
-                  About
+                  <a href="#about" >About</a>
             </h1>
       </div>
 
 
       <div className='flex flex-col ' id='contact'>
             <a
-            href="/contact"
+            href="#contact"
             className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
                   <FaMessage className='text-2xl icon-color'/>
             
             </a>
 
             <h1 className='flex mx-auto -mt-5 '>
-                  Contact
+                  <a href="#contact" >Contact</a>
             </h1>
       </div>
 
