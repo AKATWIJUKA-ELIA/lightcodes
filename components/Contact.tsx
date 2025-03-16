@@ -7,45 +7,67 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { TiTick } from "react-icons/ti";
-import {useSendMail} from "@/lib/hooks/useSendMail";
 
 const  Contact = ()=> {
         const[sending, setsending] = useState(false)
         const [Alert, setAlert] = useState(false)
         const [Error, setError] = useState(false)
   const [formData, setFormData] = useState({
+
     email: "",
     subject:"",
     message: "",
   })
-  const { email, subject, message } = formData
-   const sendMail = useSendMail(email, subject, message)
+
+  const sendEmail = async (fromEmail: any,subject: any,message: any,) => {
+        setsending(true)
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: 'eliatranquil@gmail.com',
+          subject: subject,
+          text:  ` This Message is from ${fromEmail}  \n  ${message}`
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setsending(false)
+        setAlert(true)
+        setTimeout(() => {
+                setAlert(false)
+                }, 5000);
+        console.log(data.message);
+      } else {
+        setError(true)
+        setsending(false)
+        console.log(`Error: ${data.message}`);
+      }
+     
+    } catch (error) {
+      console.error('An error occurred while sending the email.');
+      console.error(error);
+    }
+  };
+  
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setsending(true)
-    
-    const response = await sendMail
-    if (response) {
+    // Handle form submission
+    const { email, subject, message } = formData
+    sendEmail(email,subject, message)
     setFormData({
         email: "",
         subject:"",
         message: "",
       })
-      setsending(false)
-      setAlert(true)
-        setTimeout(() => {
-                setAlert(false)
-                }, 5000);
     console.log("Form submitted:", formData)
-  }{ 
-        setsending(false)
-         setError(true)
-
   }
-
-  
-}
 
   return (
         
@@ -56,6 +78,7 @@ const  Contact = ()=> {
         <div className="flex gap-[10%]">
         <div className=" flex text-2xl font-bold mx-auto ">Contact</div>
         <div className="flex"> { Alert?( <h1 className=" text-inline font-semi-bold flex text-green-500"> Your message has been sent we will reply ASAP  <TiTick className=" mt-1 text-xl text-green-500"/> </h1>):(<h1></h1>)} </div>
+        <div className="flex"> { Error?( <h1 className=" text-inline font-semi-bold flex text-red-500"> Sorry an Error Occured   </h1>):(<h1></h1>)} </div>
 
         </div>
       </CardHeader>
@@ -120,11 +143,11 @@ const  Contact = ()=> {
     </Card>
      <div className="flex flex-col mt-2  justify-center items-center ">
                 <h1 className="flex text-xl">
-                        Lets Chat
+                        Let&apos;s Chat
                 </h1>
                 <div className="flex mt-5">
                         <h1 className="text-xl">
-                                Leave a message I'll Respond ASAP
+                                Leave a message I&apos;ll Respond ASAP
                         </h1>
                 </div>
         </div>
