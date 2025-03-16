@@ -18,13 +18,15 @@ const  Contact = ()=> {
     subject:"",
     message: "",
   })
+  const { email, subject, message } = formData
+   const sendMail = useSendMail(email, subject, message)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setsending(true)
-    const { email, subject, message } = formData
-    const SendEmail = await useSendMail(email, subject, message)
-    if (SendEmail) {
+    
+    const response = await sendMail
+    if (response) {
     setFormData({
         email: "",
         subject:"",
@@ -39,7 +41,7 @@ const  Contact = ()=> {
   }{ 
         setsending(false)
          setError(true)
-         
+
   }
 
   
