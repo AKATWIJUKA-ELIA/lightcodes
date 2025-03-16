@@ -1,96 +1,152 @@
 "use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import image from "../../public/images/logo.png";
+import "@/styles/nav.css";
+import "@/styles/index.css";
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
-}) => {
-  const { scrollYProgress } = useScroll();
 
-  // set true for the initial state so that nav bar is visible in the hero section
-  const [visible, setVisible] = useState(true);
+const FloatingNav = () => {
+  const [navbarOpen, setNavbarOpen] = useState(false);
 
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+  const [sticky, setSticky] = useState(false);
+  const [openIndex, setOpenIndex] = useState(-1);
 
-      if (scrollYProgress.get() < 0.05) {
-        // also set true for the initial state
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
+  const handleStickyNavbar = () => {
+    if (window.scrollY >= 100) {
+      setSticky(true);
+    } else {
+      setSticky(false);
     }
-  });
-
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickyNavbar);
+    return () => {
+      window.removeEventListener("scroll", handleStickyNavbar);
+    };
+  }, []); 
+    
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
-        className={cn(
-          // change rounded-full to rounded-lg
-          // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
-          // change  pr-2 pl-8 py-2 to px-10 py-5
-          "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-10 inset-x-0 mx-auto px-10 py-5 rounded-lg border border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4",
-          className
-        )}
-        style={{
-          backdropFilter: "blur(16px) saturate(180%)",
-          backgroundColor: "rgba(17, 25, 40, 0.75)",
-          borderRadius: "12px",
-          border: "1px solid rgba(255, 255, 255, 0.125)",
-        }}
+    <>
+      <header
+        className={`header fixed top-0 left-0 z-40 flex w-full items-center bg-opacity-20   mt-[-8px] 
+            ${sticky ? " bg-dark !fixed !z-[9999] ! bg-opacity-100 shadow-sticky backdrop-blur-lg fade-in !transition dark:! dark:!bg-opacity-100": "absolute" }`
+      }
       >
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
-          </Link>
-        ))}
-        {/* remove this login btn */}
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
-      </motion.div>
-    </AnimatePresence>
+        <div className=" mt-10 container">
+          <div className=" relative flex items-center justify-between">
+            <div className=" w-80 relative z-10">
+              <Link
+                href="/"
+                className={`header-logo block fade-in-slower`}> 
+                <span className="ml-7 font-bold text-5xl">L I G H T<span className="text-3xl font-light" >codes</span></span>
+                
+              </Link>
+                  
+            </div>
+            <div className="flex fade-in justify-between transform">
+              <div>
+                <button
+                  onClick={() => setNavbarOpen(!navbarOpen)}
+                  id="navbarToggler"
+                  aria-label="Mobile Menu"
+                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+                >
+                </button>
+
+                <nav
+                  id="navbarCollapse"
+                  className={`navbar hidden md:block absolute mr-10 z-30 w-[250px] rounded border-[.5px] border-body-color/50  py-4 px-6 duration-300 ease-out transition-transform transform dark:border-body-color/2 lg:visible lg:static lg:w-auto lg:border-none lg:bg-dark lg:p-0 lg:opacity-100`}
+                >
+                  <ul className="border-2 rounded-full block lg:flex  backdrop-blur-lg lg:space-x-8 top-0 left-0 mr-8 h-full  text-white">
+                    <li className="group relative">
+
+                      <Link
+                        href="."
+                        className={`nav hover ml-3 flex py-2 text-white text-md  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
+                        
+                      >
+                        
+                        <span className={""}>
+                          Home
+                        </span>
+                        <span className="my-1 ml-2  font-bold">
+                          
+                        </span>
+                      </Link>
+                    </li>
+
+                    
+
+                     <li>
+                      <Link
+                        href="#projects"
+                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
+                       
+                      >
+                        <span className={""}>
+                          Projects
+                        </span>
+                        <span className="my-1 ml-2 dark:text-dark ">
+                          
+                        </span>
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="#testimonials"
+                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
+                       
+                      >
+                        <span className={""}>
+                          Testimonials
+                        </span>
+                        <span className="my-1 ml-2 dark:text-dark ">
+                          
+                        </span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="#about"
+                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
+                       
+                      >
+                        <span className={""}>
+                          About
+                        </span>
+                        <span className="my-1 ml-2 dark:text-dark ">
+                          
+                        </span>
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        href="/contact"
+                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
+                        
+                      >
+                        <span className={""}>
+                          Contact Us
+                        </span>
+                        <span className="my-1 ml-2 text-dark ">
+                          
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </header>      
+    </>
   );
 };
+
+export default FloatingNav;

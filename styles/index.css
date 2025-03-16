@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  /* Ensure html and main container also prevent horizontal scrolling */
+  html, main {
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  input[type="checkbox"]:checked ~ label span svg {
+    @apply inline-flex;
+  }
+
+  html{
+      scroll-behavior: smooth;
+
+  }
+  
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+  }
+  
+  .hero-video video {
+    /* object-fit: cover; */
+    object-fit: fill;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 25%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+  }
+  
+  .hero-overlay h1,
+  .hero-overlay p {
+    margin: 0; /* Remove default margins for better layout */
+  }
+  .hero-overlay2 {
+      position: absolute;
+      top: 70%; 
+      left: 10%; 
+      transform: translate(-5%, -60%); 
+      color: white; 
+      text-align: center;
+    }
+    
+    .hero-overlay2 h1,
+    .hero-overlay2 p {
+      left: 0; /* Remove default margins for better layout */
+    }
+  
+
+  /* Hero section styling starts here */
+  .head {
+    letter-spacing: 10px;
+  }
+
+  .head-sm {
+    letter-spacing: 4px;
+  }
+
+  .motto {
+    letter-spacing: 2px;
+  }
+
+  .dream {
+    letter-spacing: 3px;
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    font-size: 50vh;
+    bottom: -20px;
+    white-space: nowrap;
+    overflow-x: hidden; /* Ensure no overflow */
+  }
+
+  /* Hero section styling ends here */
+
+  .sticky .header-logo {
+    @apply py-5 lg:py-2;
+  }
+
+  .sticky .menu-scroll.active {
+    @apply opacity-70;
+  }
+
+  input#togglePlan:checked ~ .dot {
+    @apply translate-x-full;
+  }
+
+  input#checkboxLabel:checked ~ .box span {
+    @apply opacity-100;
+  }
+}
+
+.active {
+  color: gold;
+  border-bottom: 2px solid gold;
+}
+.active2 {
+      color: rgb(31, 6, 130);
+      border-bottom: 3px solid gold;
+    }
+
+.hover {
+  transition: background-color 0.5s, color 2s, border-top 0.5s;
+}
+
+.hover:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+.drop {
+  transform: rotate(180deg);
+  transition: 0.7s ease-in-out;
+}
+
+/* INSIDE THE NAV BAR */
+
+/* slanting divs */
+.vertical-line {
+  border-right: 1px solid #5e5959;
+  height: 350px;
+}
+
+.vertical-line-right {
+  border-left: 1px solid #5e5959;
+  height: 400px;
+}
+
+.slant-div-right {
+  position: relative;
+  overflow: hidden;
+  transform: skewX(10deg);
+  transform-origin: bottom right;
+}
+
+.animated {
+  transition: color 0.3s, transform 0.3s;
+}
+
+.animated:hover {
+  transform: translateX(4px);
+  color: rgb(29, 40, 89);
+}
+
+.float {
+  float: right;
+  margin-left: 90%;
+}
+
+.schools {
+  transition: color 0.3s, transform 0.5s;
+}
+
+.schools:hover {
+  color: rgb(0, 31, 205);
+  transform: translateX(3px);
+}
+
+.current {
+  color: rgb(29, 40, 89);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.slider-right {
+  animation-name: slide-in-right;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+}
+
+.slider {
+  animation-name: slide-in;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+}
+
+/* Fast and slow classes */
+.slide {
+  animation-duration: 1s;
+}
+
+.slide--fast {
+  animation-duration: 1s;
+}
+
+.slide--slow {
+  animation-duration: 1.5s;
+}
+
+.slide--slower {
+  animation-duration: 2s;
+}
+
+.slide--slowest {
+  animation-duration: 2.5s;
+}
+
+.change-on-hover {
+  transition: background-color 0.5s;
+  overflow-x: hidden;
+}
+
+.change-on-hover:hover {
+  background-color: rgb(41, 31, 84);
+}
+
+.change-on-hover:hover .arrow1 {
+  transform: translateX(125px);
+}
+
+.change-on-hover:hover .arrow2 {
+  transform: translateX(125px);
+}
+
+.change-on-hover:hover .arrow3 {
+  transform: translateX(125px);
+}
+
+.arrow1,
+.arrow2,
+.arrow3 {
+  transition: transform 0.5s;
+  overflow-x: hidden; 
+}
+
+.change-on-hover2{
+      overflow-x: hidden;
+}
+.change-on-hover2:hover{
+      overflow-x: hidden;
+}
+.change-on-hover2:hover .new-arr{
+      transform: translateX(125px);
+}
+
+.new-arr{
+      transition: transform 0.5s;
+     overflow-x: hidden;
+}
+
+.custom-image {
+  height: 400px;
+  object-fit: cover;
+  overflow-x: hidden; 
+}
+
+@keyframes slide-up {
+      from{
+      transform: translateY(300px);
+      }
+      to {
+      transform: translateY(0);
+      }
+}
+.slider-up {
+      animation-name: slide-up;
+      animation-timing-function: ease-in-out;
+      animation-delay: 0s;
+    }
+.slide-up-faster{
+      animation-duration: 1s
+}  
+.slide-up-fast{
+      animation-duration: 1.5s
+}  
+.slide-up-slow{
+      animation-duration: 2s
+}
+.slide-up-slower{
+      animation-duration: 2.5s
+}
+
+.color:hover{
+      color: rgb(211, 65, 213);
+}
+.borderc {
+      border-left: 5px solid rgb(255, 0, 234);
+    }
+
+
+ /* CONTACT BUTTONS  */
+
+.contact {
+      transition: 0.5s;
+    }
+    
+.contact:hover {
+      /* background-color: rgb(255, 0, 195); */
+      color: rgb(159, 25, 2);
+      
+    }
+.activate{
+      
+      color: gold;
+      border-bottom: 5px solid gold;
+}
+
+/* TOOL TIPS */
+.tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -60px;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
