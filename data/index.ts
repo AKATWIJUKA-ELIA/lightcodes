@@ -13,7 +13,7 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "https://res.cloudinary.com/dukoxursb/image/upload/v1742079361/IMG_2136_oln328.jpg",
     spareImg: "",
   },
   {
@@ -29,7 +29,7 @@ export const gridItems = [
   {
     id: 3,
     title: "My tech stack",
-    description: "I constantly try to improve",
+    description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -49,13 +49,13 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "Currently building an E-commerce Application",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "/b5.svg",
-    spareImg: "/grid.svg",
+    spareImg: "/codenogb.png",
   },
   {
     id: 6,
@@ -72,11 +72,11 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    title: "Online B2B Marketplace",
+    des: "Join the Online Marketplace And get a chance to advertise your Business",
+    img: "/e-light.png",
+    iconLists: ["/django.svg", "/Postgresql.png", "/javascript.svg", "/html.jpg", "/bootstrap.svg"],
+    link: "https://e-light.onrender.com/home/",
   },
   {
     id: 2,
@@ -152,21 +152,21 @@ export const companies = [
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "Convex",
+    img: "/convex.svg",
+    nameImg: "/convexName.svg",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "django",
+    img: "/django.svg",
+    nameImg: "/django.svg",
   },
   {
     id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    name: "Vercel.",
+    img: "/next.svg",
+    nameImg: "/nextNamee.svg",
   },
 ];
 

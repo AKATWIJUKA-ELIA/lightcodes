@@ -1,55 +1,103 @@
+
+"use client"
 import { FaLocationArrow } from "react-icons/fa6";
+import React from 'react'
+import { useState } from 'react'
+import { HiUser } from 'react-icons/hi'
+import { FaMessage } from 'react-icons/fa6' 
+import { HiMiniServerStack } from 'react-icons/hi2'
+import { AiOutlineFileDone } from 'react-icons/ai'
+import { HiHome } from 'react-icons/hi'
 
-import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
 
-const Footer = () => {
+const footer = () => {
+
+ const Click = () =>{
+      document.getElementById('services')?.classList.remove('icon-color');
+      document.getElementById('projects')?.classList.remove('icon-color');
+      document.getElementById('about')?.classList.remove('icon-color');
+      document.getElementById('contact')?.classList.remove('icon-color');
+      document.getElementById('home')?.classList.add('icon-color');
+ }
+
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
+      <div className="fixed bottom-0 left-0 z-40 flex justify-center gap-4 md:hidden w-full border opacity-75 rounded-full backdrop-blur-lg ">
+
+      <div className='flex flex-col' id='home' >
+            <a
+            href="/"
+            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
+                  <HiHome className='text-2xl ' id='home' onClick={Click}/>
+            
+            </a>
+
+            <h1 className='flex mx-auto -mt-5 '>
+                  Home
+            </h1>
       </div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:contact@jsmastery.pro">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Adrian Hajdin
-        </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <img src={info.img} alt="icons" width={20} height={20} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </footer>
-  );
-};
+      <div className='flex flex-col md:hidden' id='services'>
+            <a    href="#testimonials"
+            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
+                  <HiMiniServerStack className='text-2xl icon-color flex'/>
+                  
+            
+            </a>
 
-export default Footer;
+            <h1 className='flex  mx-auto -mt-5 '>
+                  Testimonials
+            </h1>
+      </div>
+     
+     
+
+      
+      <div className='flex flex-col' id='projects'>
+            <a
+            href="#projects"
+            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
+                  <AiOutlineFileDone className='text-2xl icon-color'/>
+            
+            </a>
+
+            <h1 className='flex mx-auto -mt-5 '>
+                  Projects
+            </h1>
+      </div>
+
+
+      <div className='flex flex-col' id='about'>
+            <a
+            href="#about"
+            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
+                  <HiUser className='text-2xl icon-color'/>
+            
+            </a>
+
+            <h1 className='flex mx-auto -mt-5 '>
+                  About
+            </h1>
+      </div>
+
+
+      <div className='flex flex-col ' id='contact'>
+            <a
+            href="/contact"
+            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
+                  <FaMessage className='text-2xl icon-color'/>
+            
+            </a>
+
+            <h1 className='flex mx-auto -mt-5 '>
+                  Contact
+            </h1>
+      </div>
+
+     
+      
+    </div>
+  )
+}
+
+export default footer;
