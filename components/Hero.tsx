@@ -1,5 +1,5 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
+import { Typewriter } from 'nextjs-simple-typewriter';
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -50,12 +50,22 @@ const Hero = () => {
            *  change md:text-6xl, add more responsive code
            */}
           <TextGenerateEffect
-            words="Transforming Concepts into Seamless User Experiences"
+            words="Bring Your Ideas to Life. Concepts into Seamless User Experiences"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Adrian, a Next.js Developer based in Croatia.
+            Hey! I&apos;m Elia, a 
+            <Typewriter
+                              words={[' Software Engineer',' Web Developer < / > ', ' Networker'] }
+                              loop={100}
+                              cursor
+                              cursorStyle='|'
+                              typeSpeed={100}
+                              deleteSpeed={100}
+                              delaySpeed={4000}
+                              
+                              />  based in Uganda.
           </p>
 
           <a href="#about">
