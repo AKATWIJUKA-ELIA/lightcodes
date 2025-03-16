@@ -125,7 +125,7 @@ const FloatingNav = () => {
 
                     <li>
                       <Link
-                        href="/contact"
+                        href="#contact"
                         className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
                         
                       >
