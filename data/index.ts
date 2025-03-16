@@ -204,14 +204,26 @@ export const workExperience = [
 export const socialMedia = [
   {
     id: 1,
+    name:"github",
+    link:"https://github.com/AKATWIJUKA-ELIA",
     img: "/git.svg",
   },
   {
     id: 2,
+    name:"twitter",
+    link:"https://x.com/The_light_tech",
     img: "/twit.svg",
   },
   {
     id: 3,
-    img: "/link.svg",
+    name:"linkedin",
+    link:"https://www.linkedin.com/in/akatwijuka-elia-64066b295/",
+    img: "/linkedin2.png",
+  },
+    {
+    id: 4,
+    name:"stack-overflow",
+    link:"https://stackoverflow.com/users/22681878",
+    img: "/stack.png",
   },
 ];

@@ -3,7 +3,9 @@ import { Typewriter } from 'nextjs-simple-typewriter';
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-
+import {socialMedia} from "../data"
+import Link from "next/link";
+import Image from "next/image";
 const Hero = () => {
   return (
     <div className="pb-20 pt-36">
@@ -75,6 +77,13 @@ const Hero = () => {
               position="right"
             />
           </a>
+          <div className="flex flex-row items-center justify-center  gap-4 mt-2">
+  {socialMedia?.map((item) => (
+    <Link href={item.link} key={item.id}>
+      <Image src={item.img} alt={item.name} width={50} height={50} className="border rounded-full p-2" />
+    </Link>
+  ))}
+</div>
         </div>
       </div>
     </div>
