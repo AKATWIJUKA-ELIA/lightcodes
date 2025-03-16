@@ -71,7 +71,7 @@ const  Contact = ()=> {
 
   return (
         
-    <div className=" flex flex-col-reverse md:flex md:flex-row mx-auto mt-5 mb-10 gap-[10%]  bg-gradient-to-l from-black-100 via-black-300 to-black-100 rounded-3xl" >
+    <div id="contact" className=" flex flex-col-reverse md:flex md:flex-row mx-auto mt-5 mb-10 gap-[10%]  bg-gradient-to-l from-black-100 via-black-300 to-black-100 rounded-3xl" >
        
         <Card className="  mt-5 md:w-[50%] text-white">
       <CardHeader>
