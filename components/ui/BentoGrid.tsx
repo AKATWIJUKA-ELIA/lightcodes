@@ -11,6 +11,7 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import Link from "next/link";
 
 export const BentoGrid = ({
   className,
@@ -52,8 +53,16 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = [
+                                {name:"ReactJS",link:"https://react.dev/"},
+                                {name:"Django",link:"https://www.djangoproject.com/"},
+                                {name:"Python",link:"https://www.python.org/"},
+                                {name:"TypeScript",link:"https://www.typescriptlang.org/"} ];
+
+  const rightLists = [{name:"Convex",link:"https://www.convex.dev/"},
+                                {name:"Clerk",link:"https://clerk.com/"},
+                                {name:"postgreSql",link:"https://www.postgresql.org/"},
+                                {name:"Cloudinary",link:"https://cloudinary.com/"}];
 
   const [copied, setCopied] = useState(false);
 
@@ -67,7 +76,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "eliaakjtrnq@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -143,27 +152,33 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
               {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+              <div className="flex flex-col gap-2 md:gap-1 lg:gap-4 ">
                 {leftLists.map((item, i) => (
+                  
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E] hover:bg-black-100 cursor-pointer"
                   >
-                    {item}
+                  <Link href={item.link}  target="_blank" >
+                    {item.name}
+                    </Link>
                   </span>
+                  
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                
               </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+              <div className="flex flex-col gap-2 md:gap-1 lg:gap-4">
+             
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E] hover:bg-black-100 cursor-pointer"
                   >
-                    {item}
+                    <Link href={item.link} target="_blank" >
+                    {item.name}
+                    </Link>
                   </span>
                 ))}
               </div>
