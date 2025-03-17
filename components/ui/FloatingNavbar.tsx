@@ -30,7 +30,7 @@ const FloatingNav = () => {
   return (
     <>
       <header
-        className={`header fixed top-0 left-0 z-40 flex w-full items-center bg-opacity-20   mt-[-8px] 
+        className={`header fixed  top-0 left-0 z-40 flex w-full items-center bg-opacity-20   mt-[-8px] 
             ${sticky ? " bg-dark !fixed !z-[9999] ! bg-opacity-100 shadow-sticky backdrop-blur-lg fade-in !transition dark:! dark:!bg-opacity-100": "absolute" }`
       }
       >
