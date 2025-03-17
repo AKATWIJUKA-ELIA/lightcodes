@@ -2,6 +2,7 @@ import React from "react";
 
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
+import Link from "next/link";
 
 const Experience = () => {
   return (
@@ -37,7 +38,9 @@ const Experience = () => {
               />
               <div className="lg:ms-5">
                 <h1 className="text-start text-xl md:text-2xl font-bold">
+                        <Link href={card.link} target="_blank" >
                   {card.title}
+                  </Link>
                 </h1>
                 <p className="text-start text-white-100 mt-3 font-semibold">
                   {card.desc}
