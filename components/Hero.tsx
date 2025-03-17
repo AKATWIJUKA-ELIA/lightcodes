@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-36 flex ">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -45,18 +45,13 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
 
+                <TextGenerateEffect
+                words="Bring Your Ideas to Life. Concepts into Seamless User Experiences"
+                className="text-center text-[40px] md:text-5xl lg:text-6xl"
+                />
+              
 
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
-          <TextGenerateEffect
-            words="Bring Your Ideas to Life. Concepts into Seamless User Experiences"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
-
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+                <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hey! I&apos;m Elia, a 
             <Typewriter
                               words={[' Software Engineer',' Web Developer < / > ', ' Networker'] }
@@ -68,24 +63,32 @@ const Hero = () => {
                               delaySpeed={4000}
                               
                               />  based in Uganda.
-          </p>
+                </p>
 
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
-          <div className="flex flex-row items-center justify-center  gap-4 mt-2">
-  {socialMedia?.map((item) => (
-    <Link href={item.link} key={item.id}>
-      <Image src={item.img} alt={item.name} width={50} height={50} className="border rounded-full p-2" />
-    </Link>
-  ))}
-</div>
+                <a href="#about">
+                <MagicButton
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+                />
+                </a>
+
+                <div className="flex flex-row items-center justify-center  gap-4 mt-2">
+                {socialMedia?.map((item) => (
+                <Link href={item.link} key={item.id}>
+                <Image src={item.img} alt={item.name} width={50} height={50} className="border rounded-full p-2" />
+                </Link>
+                ))}
+                </div>
+
+                
         </div>
+          
       </div>
+      <div className="flex h-[80%] mt-20 hidden md:block " >
+                      <Image src="/codenogb.png" alt="imagecode" width={600} height={50} className="border border-gray-900 rounded-md backdrop-blur-sm" />
+        </div>
+
     </div>
   );
 };
