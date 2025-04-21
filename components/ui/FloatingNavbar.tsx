@@ -10,7 +10,7 @@ import "@/styles/index.css";
 const FloatingNav = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  const [sticky, setSticky] = useState(false);
+        const [sticky, setSticky] = useState(false);
   const [openIndex, setOpenIndex] = useState(-1);
 
   const handleStickyNavbar = () => {
@@ -30,9 +30,9 @@ const FloatingNav = () => {
   return (
     <>
       <header
-        className={`header fixed  top-0 left-0 z-40 flex w-full items-center bg-opacity-20   mt-[-8px] 
-            ${sticky ? " bg-dark !fixed !z-[9999] ! bg-opacity-100 shadow-sticky backdrop-blur-lg fade-in !transition dark:! dark:!bg-opacity-100": "absolute" }`
-      }
+                className={`header fixed  top-0 left-0 z-40 flex w-full items-center bg-opacity-20   mt-[-8px] 
+                ${sticky ? " bg-dark !fixed !z-[9999] ! bg-opacity-100 shadow-sticky backdrop-blur-lg fade-in !transition dark:! dark:!bg-opacity-100": "absolute" }`
+        }
       >
         <div className=" mt-10 container">
           <div className=" relative flex items-center justify-between">
@@ -40,24 +40,18 @@ const FloatingNav = () => {
               <Link
                 href="/"
                 className={`header-logo block fade-in-slower`}> 
-                <span className="ml-7 font-bold text-5xl">L I G H T<span className="text-3xl font-light" >codes</span></span>
+                <span className=" font-bold text-5xl">L I G H T<span className="text-3xl font-light" >codes</span></span>
                 
               </Link>
                   
             </div>
             <div className="flex fade-in justify-between transform">
               <div>
-                <button
-                  onClick={() => setNavbarOpen(!navbarOpen)}
-                  id="navbarToggler"
-                  aria-label="Mobile Menu"
-                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                >
-                </button>
+
 
                 <nav
                   id="navbarCollapse"
-                  className={`navbar hidden md:block absolute mr-10 z-30 w-[250px] rounded border-[.5px] border-body-color/50  py-4 px-6 duration-300 ease-out transition-transform transform dark:border-body-color/2 lg:visible lg:static lg:w-auto lg:border-none lg:bg-dark lg:p-0 lg:opacity-100`}
+                  className={`navbar hidden md:flex absolute  z-30 w-[250px] rounded border-[.5px] border-body-color/50  py-4 px-6 duration-300 ease-out transition-transform transform dark:border-body-color/2 lg:visible lg:static lg:w-auto lg:border-none lg:bg-dark lg:p-0 lg:opacity-100`}
                 >
                   <ul className=" block lg:flex  backdrop-blur-lg lg:space-x-8 top-0 left-0 mr-8 h-full  text-white">
                     <li className="group relative">
