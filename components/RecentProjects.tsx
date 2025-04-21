@@ -18,8 +18,8 @@ const RecentProjects = () => {
         className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw] relative z-10"
         key={item.id}
       >
-        <Link href={item.link} >
-        <PinContainer title="/ui.aceternity.com" href="https://twitter.com/mannupaaji">
+        <Link href={item.link} target="_blank" >
+        <PinContainer title={item.link} >
           <div className="relative flex items-center justify-center sm:w-96 w-[80vw] h-[20vh] lg:h-[30vh] mb-10">
             <div
               className="relative w-full h-full lg:rounded-3xl"
