@@ -1,11 +1,100 @@
-import { FaLocationArrow } from "react-icons/fa6";
-import { Typewriter } from 'nextjs-simple-typewriter';
-import MagicButton from "./MagicButton";
-import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import {socialMedia} from "../data"
-import Link from "next/link";
+"use client";
+
+import type React from "react";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+	Play,
+	Star,
+	Users,
+	MapPin,
+	Phone,
+	Clock,
+	Dumbbell,
+	Target,
+	Trophy,
+	ArrowRight,
+	CheckCircle,
+} from "lucide-react";
 import Image from "next/image";
+
+const gymStats = [
+	{ label: "Active Members", value: "2,500+", icon: Users },
+	{ label: "Years of Excellence", value: "15+", icon: Trophy },
+	{ label: "Fitness Classes", value: "50+", icon: Target },
+	{ label: "Personal Trainers", value: "25+", icon: Dumbbell },
+];
+
+const membershipPlans = [
+	{
+		name: "Basic",
+		price: "$29",
+		period: "/month",
+		features: ["Gym Access", "Locker Room", "Basic Equipment"],
+		popular: false,
+	},
+	{
+		name: "Premium",
+		price: "$49",
+		period: "/month",
+		features: [
+			"All Basic Features",
+			"Group Classes",
+			"Personal Training Session",
+			"Nutrition Consultation",
+		],
+		popular: true,
+	},
+	{
+		name: "Elite",
+		price: "$79",
+		period: "/month",
+		features: [
+			"All Premium Features",
+			"Unlimited Personal Training",
+			"Meal Planning",
+			"Recovery Services",
+		],
+		popular: false,
+	},
+];
+
+const testimonials = [
+	{
+		name: "Sarah Johnson",
+		role: "Fitness Enthusiast",
+		image: "/placeholder.svg?height=60&width=60",
+		rating: 5,
+		text: "This gym transformed my life! The trainers are amazing and the community is so supportive.",
+	},
+	{
+		name: "Mike Chen",
+		role: "Professional Athlete",
+		image: "/placeholder.svg?height=60&width=60",
+		rating: 5,
+		text: "Best gym in the city! State-of-the-art equipment and knowledgeable staff.",
+	},
+	{
+		name: "Emily Davis",
+		role: "Busy Professional",
+		image: "/placeholder.svg?height=60&width=60",
+		rating: 5,
+		text: "Flexible hours and amazing classes fit perfectly into my busy schedule.",
+	},
+];
 const Hero = () => {
   return (
     <div className="pb-20 pt-36 flex ">
