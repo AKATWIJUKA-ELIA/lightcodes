@@ -3,9 +3,6 @@
      Special thanks to https://github.com/adrianhajdin <br>
      Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
     </div>
-Creating a README for your portfolio is a great way to showcase your projects, skills, and achievements. Here's a suggested structure and content for your README:
-
----
 
 # My Portfolio
 
