@@ -118,7 +118,7 @@ export const projects = [
 			"/re.svg",
 			"/convex.svg",
 		],
-		link: "/https://ypares.vercel.app/",
+		link: "https://ypares.vercel.app/",
 	},
 ];
 
