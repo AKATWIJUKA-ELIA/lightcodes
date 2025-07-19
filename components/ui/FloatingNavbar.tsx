@@ -40,7 +40,7 @@ const FloatingNav = () => {
               <Link
                 href="/"
                 className={`header-logo block fade-in-slower`}> 
-                <span className=" font-bold text-5xl">BU<span className="text-3xl font-light" >Gym</span></span>
+                <span className=" font-bold text-5xl">Light<span className="text-3xl font-light" >tech</span></span>
                 
               </Link>
                   
