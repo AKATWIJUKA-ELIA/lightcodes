@@ -9,97 +9,29 @@ import { HiMiniServerStack } from 'react-icons/hi2'
 import { AiOutlineFileDone } from 'react-icons/ai'
 import { HiHome } from 'react-icons/hi'
 import { MdRecommend } from "react-icons/md";
-
+const navItems = [
+  { id: 'home', label: 'Home', icon: HiHome },
+  { id: 'projects', label: 'Projects', icon: AiOutlineFileDone },
+  { id: 'testimonials', label: 'Testimonials', icon: MdRecommend },
+  { id: 'about', label: 'About', icon: HiUser },
+  { id: 'contact', label: 'Contact', icon: FaMessage },
+];
 
 const footer = () => {
 
- const Click = () =>{
-      document.getElementById('services')?.classList.remove('icon-color');
-      document.getElementById('projects')?.classList.remove('icon-color');
-      document.getElementById('about')?.classList.remove('icon-color');
-      document.getElementById('contact')?.classList.remove('icon-color');
-      document.getElementById('home')?.classList.add('icon-color');
- }
 
   return (
-      <div className="fixed bottom-0 left-0 z-40 flex justify-center gap-4 md:hidden w-full border opacity-75 rounded-full backdrop-blur-lg ">
+      <div className="fixed bottom-0 p-3  left-0 z-40 flex justify-center gap-4 w-full border border-blue-950 backdrop-blur-3xl ">
 
-      <div className='flex flex-col' id='home' >
-            <a
-            href="/"
-            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
-                  <HiHome className='text-2xl ' id='home' onClick={Click}/>
-            
-            </a>
-
-            <h1 className='flex mx-auto -mt-5 '>
-                 <a href="#" >
-                        Home
-                </a> 
-            </h1>
-      </div>
-
-
-      <div className='flex flex-col md:hidden' id='services'>
-            <a    href="#testimonials"
-            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
-                  <MdRecommend className='text-2xl icon-color flex'/>
-                  
-            
-            </a>
-
-            <h1 className='flex  mx-auto -mt-5 '>
-                  <a href="#testimonials" >
-                        Testimonials
-                </a> 
-            </h1>
-      </div>
-     
-     
-
-      
-      <div className='flex flex-col' id='projects'>
-            <a
-            href="#projects"
-            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
-                  <AiOutlineFileDone className='text-2xl icon-color'/>
-            
-            </a>
-
-            <h1 className='flex mx-auto -mt-5 '>
-                  <a href="#projects" >Projects</a>
-            </h1>
-      </div>
-
-
-      <div className='flex flex-col' id='about'>
-            <a
-            href="#about"
-            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
-                  <HiUser className='text-2xl icon-color'/>
-            
-            </a>
-
-            <h1 className='flex mx-auto -mt-5 '>
-                  <a href="#about" >About</a>
-            </h1>
-      </div>
-
-
-      <div className='flex flex-col ' id='contact'>
-            <a
-            href="#contact"
-            className="group rounded-lg border border-transparent md:mx-10 px-5 py-4 md:hidden"  >
-                  <FaMessage className='text-2xl icon-color'/>
-            
-            </a>
-
-            <h1 className='flex mx-auto -mt-5 '>
-                  <a href="#contact" >Contact</a>
-            </h1>
-      </div>
-
-     
+      <div className='grid grid-cols-5 gap-24 ' id='home' >
+        { navItems.map((item) => (
+                <div key={item.id} className="group relative flex flex-col items-center justify-center text-gray-400 bg-gray-600 p-2 rounded-lg hover:text-white cursor-pointer">
+                <item.icon className='text-2xl text-gray-400 hover:scale-150 transition duration-200'/>
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                  {item.label}
+                </span>
+        </div>))}
+      </div>     
       
     </div>
   )
