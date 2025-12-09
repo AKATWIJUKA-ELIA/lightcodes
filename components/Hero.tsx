@@ -12,7 +12,7 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-slate-950">
+    <section className="relative h-screen w-full overflow-hidden bg-slate-950">
       {/* Spotlights */}
       <div className="pointer-events-none absolute inset-0">
         <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />
@@ -26,12 +26,12 @@ const Hero = () => {
       </div>
 
       {/* Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-violet-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
 
       {/* Main Content */}
-      <div className="relative  z-10 flex min-h-screen items-center justify-center px-24 py-20">
-        <div className="mx-auto  flex w-full flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-10 md:py-20">
+        <div className="mx-auto flex w-full flex-col-reverse items-center gap-8 md:gap-12 lg:flex-row lg:items-center lg:justify-between">
           {/* Left Content */}
           <div className="flex max-w-2xl flex-col items-center text-center lg:items-start lg:text-left">
             {/* Badge */}
@@ -101,9 +101,9 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative w-[30%] ">
+          <div className="relative w-full sm:w-[70%] md:w-[50%] lg:w-[35%] xl:w-[30%]">
             {/* Decorative ring */}
-            <div className="absolute -inset-4 rounded-2xl  bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-violet-500/20 blur-xl" />
+            <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-violet-500/20 blur-xl" />
 
             {/* Image container */}
             <div className="relative  mt-10 md:mt-0 overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/30 p-2 backdrop-blur-sm">
@@ -119,26 +119,26 @@ const Hero = () => {
               </div>
 
               {/* Floating stats cards */}
-              <div className="absolute -bottom-4 -left-4 rounded-lg border border-slate-700 bg-slate-900/90 px-4 py-3 backdrop-blur-sm">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-violet-500/20">
-                    <span className="text-lg">🚀</span>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 rounded-lg border border-slate-700 bg-slate-900/90 px-2 py-2 sm:px-4 sm:py-3 backdrop-blur-sm">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-violet-500/20">
+                    <span className="text-sm sm:text-lg">🚀</span>
                   </div>
                   <div>
-                    <p className="text-xl font-bold text-white">50+</p>
-                    <p className="text-xs text-slate-400">Projects Done</p>
+                    <p className="text-lg sm:text-xl font-bold text-white">50+</p>
+                    <p className="text-[10px] sm:text-xs text-slate-400">Projects Done</p>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute -right-4 -top-4 rounded-lg border border-slate-700 bg-slate-900/90 px-4 py-3 backdrop-blur-sm">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20">
-                    <span className="text-lg">⭐</span>
+              <div className="absolute -right-2 -top-2 sm:-right-4 sm:-top-4 rounded-lg border border-slate-700 bg-slate-900/90 px-2 py-2 sm:px-4 sm:py-3 backdrop-blur-sm">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-emerald-500/20">
+                    <span className="text-sm sm:text-lg">⭐</span>
                   </div>
                   <div>
-                    <p className="text-xl font-bold text-white">5+</p>
-                    <p className="text-xs text-slate-400">Years Exp.</p>
+                    <p className="text-lg sm:text-xl font-bold text-white">5+</p>
+                    <p className="text-[10px] sm:text-xs text-slate-400">Years Exp.</p>
                   </div>
                 </div>
               </div>

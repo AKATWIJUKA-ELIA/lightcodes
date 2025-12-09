@@ -19,14 +19,6 @@ const Home = () => {
       <div className=" w-full">
         <FloatingNav  />
         <Hero />
-        <Grid />
-        <RecentProjects />
-        <Clients />
-        <Experience />
-        <Approach />
-        <About/>
-        <Contact/>
-        
       </div>
     </main>
   );
