@@ -42,7 +42,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
+      <div className="flex justify-center relative my-2 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
 
                 <TextGenerateEffect
@@ -85,7 +85,7 @@ const Hero = () => {
         </div>
           
       </div>
-      <div className="flex h-[80%] mt-20 hidden md:block " >
+      <div className="flex h-[80%] mt-20  md:block " >
                       <Image src="/codenogb.png" alt="imagecode" width={600} height={50} className="border border-gray-900 rounded-md backdrop-blur-sm" />
         </div>
 

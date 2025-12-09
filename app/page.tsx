@@ -26,7 +26,7 @@ const Home = () => {
         <Approach />
         <About/>
         <Contact/>
-        <Footer />
+        
       </div>
     </main>
   );

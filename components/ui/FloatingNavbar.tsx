@@ -31,7 +31,7 @@ const FloatingNav = () => {
     <>
       <header
                 className={`header fixed  top-0 left-0 z-40 flex w-full items-center bg-opacity-20   mt-[-8px] 
-                ${sticky ? " bg-dark !fixed !z-[9999] ! bg-opacity-100 shadow-sticky backdrop-blur-lg fade-in !transition dark:! dark:!bg-opacity-100": "absolute" }`
+                ${sticky ? " bg-dark !fixed !z-[9999] ! bg-opacity-100 shadow-sticky  fade-in !transition dark:! dark:!bg-opacity-100": "absolute" }`
         }
       >
         <div className=" mt-10 container">
@@ -49,7 +49,7 @@ const FloatingNav = () => {
               <div>
 
 
-                <nav
+                {/* <nav
                   id="navbarCollapse"
                   className={`navbar hidden md:flex absolute  z-30 w-[250px] rounded border-[.5px] border-body-color/50  py-4 px-6 duration-300 ease-out transition-transform transform dark:border-body-color/2 lg:visible lg:static lg:w-auto lg:border-none lg:bg-dark lg:p-0 lg:opacity-100`}
                 >
@@ -132,7 +132,7 @@ const FloatingNav = () => {
                       </Link>
                     </li>
                   </ul>
-                </nav>
+                </nav> */}
               </div>
             </div>
           </div>
