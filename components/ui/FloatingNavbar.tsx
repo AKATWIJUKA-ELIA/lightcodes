@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import image from "../../public/images/logo.png";
 import "@/styles/nav.css";
 import "@/styles/index.css";
+import { socialMedia } from "@/data";
+import { FaGithub, FaLinkedin, FaTwitter, FaStackOverflow } from "react-icons/fa6";
 
 
 const FloatingNav = () => {
@@ -47,92 +49,23 @@ const FloatingNav = () => {
             </div>
             <div className="flex fade-in justify-between transform">
               <div>
-
-
-                {/* <nav
-                  id="navbarCollapse"
-                  className={`navbar hidden md:flex absolute  z-30 w-[250px] rounded border-[.5px] border-body-color/50  py-4 px-6 duration-300 ease-out transition-transform transform dark:border-body-color/2 lg:visible lg:static lg:w-auto lg:border-none lg:bg-dark lg:p-0 lg:opacity-100`}
-                >
-                  <ul className=" block lg:flex  backdrop-blur-lg lg:space-x-8 top-0 left-0 mr-8 h-full  text-white">
-                    <li className="group relative">
-
-                      <Link
-                        href="."
-                        className={`nav hover ml-3 flex py-2 text-white text-md  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
-                        
-                      >
-                        
-                        <span className={""}>
-                          Home
-                        </span>
-                        <span className="my-1 ml-2  font-bold">
-                          
-                        </span>
-                      </Link>
-                    </li>
-
-                    
-
-                     <li>
-                      <Link
-                        href="#projects"
-                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
-                       
-                      >
-                        <span className={""}>
-                          Projects
-                        </span>
-                        <span className="my-1 ml-2 dark:text-dark ">
-                          
-                        </span>
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href="#testimonials"
-                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
-                       
-                      >
-                        <span className={""}>
-                          Testimonials
-                        </span>
-                        <span className="my-1 ml-2 dark:text-dark ">
-                          
-                        </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#about"
-                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
-                       
-                      >
-                        <span className={""}>
-                          About
-                        </span>
-                        <span className="my-1 ml-2 dark:text-dark ">
-                          
-                        </span>
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        href="#contact"
-                        className={`nav hover flex py-2  text-white  font-bold group-hover:opacity-70 lg:mr-5 lg:inline-flex lg:py-6 lg:px-0`}
-                        
-                      >
-                        <span className={""}>
-                          Contact Us
-                        </span>
-                        <span className="my-1 ml-2 text-dark ">
-                          
-                        </span>
-                      </Link>
-                    </li>
-                  </ul>
-                </nav> */}
+                            <div className="mt-10 hidden  md:flex items-center gap-4">
+                              <span className="text-sm text-slate-500">Find me on</span>
+                              <div className="flex gap-3">
+                                {socialMedia?.map((item) => (
+                                  <Link
+                                    href={item.link}
+                                    key={item.id}
+                                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-slate-800/50 text-slate-400 transition-all hover:border-violet-500 hover:bg-violet-500/10 hover:text-violet-400"
+                                  >
+                                    {item.name === "github" && <FaGithub className="h-5 w-5" />}
+                                    {item.name === "linkedin" && <FaLinkedin className="h-5 w-5" />}
+                                    {item.name === "twitter" && <FaTwitter className="h-5 w-5" />}
+                                    {item.name ==="stack-overflow" && <FaStackOverflow className="h-5 w-5" />}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
               </div>
             </div>
           </div>

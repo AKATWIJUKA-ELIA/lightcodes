@@ -9,6 +9,7 @@ import { HiMiniServerStack } from 'react-icons/hi2'
 import { AiOutlineFileDone } from 'react-icons/ai'
 import { HiHome } from 'react-icons/hi'
 import { MdRecommend } from "react-icons/md";
+import Hero from "./Hero";
 const navItems = [
   { id: 'home', label: 'Home', icon: HiHome },
   { id: 'projects', label: 'Projects', icon: AiOutlineFileDone },
@@ -21,7 +22,7 @@ const footer = () => {
 
 
   return (
-      <div className="fixed bottom-0 p-3  left-0 z-40 flex justify-center gap-4 w-full border border-blue-950 backdrop-blur-3xl ">
+      <div className="fixed bottom-0 p-2  left-0 z-40 flex justify-center gap-4 w-full  backdrop-blur-3xl ">
 
       <div className='grid grid-cols-5 gap-24 ' id='home' >
         { navItems.map((item) => (
