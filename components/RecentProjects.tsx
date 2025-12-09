@@ -8,7 +8,8 @@ import Link from "next/link";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20 relative z-0" id="projects">
+   <div className="absolute inset-0 overflow-auto z-50 opacity-100 bg-black-200" >
+         <div className="py-20 relative z-0" id="projects">
   <h1 className="heading">
     A small selection of <span className="text-purple">recent projects</span>
   </h1>
@@ -76,6 +77,7 @@ const RecentProjects = () => {
     ))}
   </div>
 </div>
+   </div>
 
   );
 };
