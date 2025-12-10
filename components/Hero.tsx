@@ -31,11 +31,11 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex min-h-screen items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-10 md:py-20">
-        <div className="mx-auto flex w-full flex-col items-center gap-8 md:gap-12 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mx-auto flex w-full flex-col-reverse items-center gap-8 md:gap-12 lg:flex-row lg:items-center lg:justify-between">
           {/* Left Content */}
           <div className="flex max-w-2xl flex-col items-center text-center lg:items-start lg:text-left">
             {/* Badge */}
-            <div className="mt-10 md:mt-6 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-2 backdrop-blur-sm">
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-2 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -106,7 +106,7 @@ const Hero = () => {
             <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-violet-500/20 blur-xl" />
 
             {/* Image container */}
-            <div className="relative   md:mt-0 overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/30 p-2 backdrop-blur-sm">
+            <div className="relative  mt-10 md:mt-0 overflow-hidden rounded-2xl border border-slate-700/50 bg-slate-800/30 p-2 backdrop-blur-sm">
               <div className="overflow-hidden rounded-xl">
                 <Image
                   src="/codenogb.png"
