@@ -34,7 +34,7 @@ const navItems = [
 
 type WindowSize = "minimized" | "normal" | "maximized";
 
-const footer = () => {
+const Footer = () => {
         const [activeIndex, setActiveIndex] = useState<number | null>(null);
         const [home, setHome] = useState(false);
         const [overview, setOverview] = useState(false);
@@ -143,4 +143,4 @@ const footer = () => {
   )
 }
 
-export default footer;
+export default Footer;
