@@ -6,6 +6,7 @@ import Skills from '@/components/about/skills';
 import WorkExperience from '@/components/about/work_experience';
 import Interests from '@/components/about/interests';
 
+
 interface AboutProps {
   onClose?: () => void;
   onMinimize?: () => void;
@@ -204,7 +205,6 @@ const About = ({
           </div>
         </div>
       </div>
-    );
-};
+    )};
 
 export default About;

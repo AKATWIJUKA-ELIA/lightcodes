@@ -9,6 +9,17 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect"
 import { socialMedia } from "@/data"
 import Link from "next/link"
 import Image from "next/image"
+"use client"
+
+import { FaLocationArrow, FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa6"
+import { FaTwitter } from "react-icons/fa"
+import { Typewriter } from "nextjs-simple-typewriter"
+import MagicButton from "./MagicButton"
+import { Spotlight } from "./ui/Spotlight"
+import { TextGenerateEffect } from "./ui/TextGenerateEffect"
+import { socialMedia } from "@/data"
+import Link from "next/link"
+import Image from "next/image"
 
 const Hero = () => {
   return (
@@ -18,8 +29,17 @@ const Hero = () => {
         <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />
         <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="#7c3aed" />
         <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="#3b82f6" />
+    <section className="relative h-screen w-full overflow-hidden bg-slate-950">
+      {/* Spotlights */}
+      <div className="pointer-events-none absolute inset-0">
+        <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />
+        <Spotlight className="h-[80vh] w-[50vw] top-10 left-full" fill="#7c3aed" />
+        <Spotlight className="left-80 top-28 h-[80vh] w-[50vw]" fill="#3b82f6" />
       </div>
 
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-slate-950 bg-grid-white/[0.02]">
+        <div className="absolute inset-0 bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       {/* Grid Background */}
       <div className="absolute inset-0 bg-slate-950 bg-grid-white/[0.02]">
         <div className="absolute inset-0 bg-slate-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
@@ -159,5 +179,20 @@ const Hero = () => {
     </section>
   )
 }
+      </div>
 
+      {/* Scroll indicator */}
+      {/* <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-slate-500">Scroll down</span>
+          <div className="flex h-8 w-5 items-start justify-center rounded-full border border-slate-600 p-1">
+            <div className="h-2 w-1 animate-bounce rounded-full bg-slate-400" />
+          </div>
+        </div>
+      </div> */}
+    </section>
+  )
+}
+
+export default Hero
 export default Hero
