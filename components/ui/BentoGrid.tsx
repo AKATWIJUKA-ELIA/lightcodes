@@ -9,6 +9,7 @@ import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 import Link from "next/link";
+import {handleCopy} from "@/lib/utils";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export const BentoGrid = ({
@@ -18,6 +19,7 @@ export const BentoGrid = ({
   className?: string;
   children?: React.ReactNode;
 }) => {
+        
   return (
     <div
       className={cn(
@@ -57,6 +59,12 @@ export const BentoGridItem = ({
     return () => setCopied(false); // Cleanup to reset copied state
   }, []);
 
+    const Copy =  () => {
+		 handleCopy();
+		setCopied(true);
+		setTimeout(() => setCopied(false), 3000);
+    };
+
   const leftLists = [
     { name: "ReactJS", link: "https://react.dev/" },
     { name: "Django", link: "https://www.djangoproject.com/" },
@@ -71,13 +79,7 @@ export const BentoGridItem = ({
     { name: "Cloudinary", link: "https://cloudinary.com/" },
   ];
 
-const handleCopy = () => {
-  if (typeof window !== "undefined") {
-    navigator.clipboard.writeText("eliaakjtrnq@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 3000);
-  }
-};
+
 
   return (
     <div
@@ -182,7 +184,7 @@ const handleCopy = () => {
                 title={copied ? "Email is Copied!" : "Copy my email address"}
                 icon={<IoCopyOutline />}
                 position="left"
-                handleClick={handleCopy}
+                handleClick={Copy}
                 otherClasses="!bg-[#161A31]"
               />
             </div>
