@@ -81,7 +81,7 @@ export const projects = [
 			"/ts.svg",
 			"/re.svg",
 			"/convex.svg",
-                        "/redis.png",
+			"/redis.png",
 		],
 		link: "https://shopcheapug.com",
 	},
@@ -113,7 +113,7 @@ export const projects = [
 			"/re.svg",
 			"/convex.svg",
 		],
-		link: "#",
+		link: "https://biometric-2.vercel.app",
 	},
 	{
 		id: 4,
