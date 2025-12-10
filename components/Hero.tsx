@@ -9,8 +9,24 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect"
 import { socialMedia } from "@/data"
 import Link from "next/link"
 import Image from "next/image"
-
+import { useEffect, useState } from "react"
+import { IoCopyOutline } from "react-icons/io5"
+import { handleCopy } from "@/lib/utils"
+import animationData from "@/data/confetti.json";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const Hero = () => {
+          const [copied, setCopied] = useState(false);
+          const [isMounted,setIsMounted] = useState(false)
+          useEffect(() => {
+              setIsMounted(true);
+              return () => setCopied(false); // Cleanup to reset copied state
+            }, []);
+              const Copy =  () => {
+				handleCopy();
+				setCopied(true);
+				setTimeout(() => setCopied(false), 3000);
+			};
   return (
     <section className="relative h-screen w-full overflow-hidden bg-slate-950">
       {/* Spotlights */}
@@ -68,10 +84,27 @@ const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className=" flex flex-col items-center gap-4 sm:flex-row lg:items-start">
-              <a href="#about">
+            <div className=" flex flex-col items-center gap-4  lg:items-start">
+              {/* <a href="#about">
                 <MagicButton title="Show my work" icon={<FaLocationArrow />} position="right" />
-              </a>
+              </a> */}
+              {isMounted && copied && (
+                    <div className=" absolute left-4 bottom-10" >
+                          <Lottie
+                        animationData={animationData}
+                        loop={false}
+                        autoplay={true}
+                        style={{ height: 200, width: 400 }}
+                      />
+                    </div>
+                    )}
+               <MagicButton
+                              title={copied ? "Email is Copied!" : "Copy my email address"}
+                              icon={<IoCopyOutline />}
+                              position="left"
+                              handleClick={Copy}
+                              otherClasses="!bg-[#161A31]"
+                            />
               {/* <a
                 href="#contact"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-slate-700 bg-transparent px-7 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800 hover:text-white"
