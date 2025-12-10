@@ -70,38 +70,56 @@ export const gridItems = [
 ];
 
 export const projects = [
-  {
-    id: 1,
-    title: "Online B2B Marketplace",
-    des: "Join the Online Marketplace And get a chance to advertise your Business",
-    img: "/e-light.png",
-    iconLists: ["/django.svg", "/Postgresql.png", "/javascript.svg", "/html.jpg", "/bootstrap.svg"],
-    link: "https://e-light.onrender.com/home/",
-  },
-  {
-    id: 2,
-    title: "ShopCheap",
-    des: "An Online Store, your one-stop online destination for quality, value, and convenience.",
-    img: "/shopcheap.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://shopcheap.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Bugema University Website",
-    des: "Bugema University Website Front End.",
-    img: "/bugenauinv.png",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg",],
-    link: "https://www.bugemauniv.ac.ug/",
-  },
-  {
-    id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
-  },
+	{
+		id: 1,
+		title: "Online B2B Marketplace",
+		des: "Join the Online Marketplace And get a chance to advertise your Business",
+		img: "/e-light.png",
+		iconLists: [
+			"/django.svg",
+			"/Postgresql.png",
+			"/javascript.svg",
+			"/html.jpg",
+			"/bootstrap.svg",
+		],
+		link: "https://e-light.onrender.com/home/",
+	},
+	{
+		id: 2,
+		title: "ShopCheap",
+		des: "An Online Store, your one-stop online destination for quality, value, and convenience.",
+		img: "/shopcheap.png",
+		iconLists: [
+			"/next.svg",
+			"/tail.svg",
+			"/ts.svg",
+			"/re.svg",
+			"/convex.svg",
+		],
+		link: "https://shopcheap.vercel.app/",
+	},
+	{
+		id: 3,
+		title: "Bugema University Website",
+		des: "Bugema University Website Front End.",
+		img: "/bugenauinv.png",
+		iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+		link: "https://www.bugemauniv.ac.ug/",
+	},
+	{
+		id: 4,
+		title: "ypa Restaurant",
+		des: "An online food ordering platform...",
+		img: "/ypa.png",
+		iconLists: [
+			"/next.svg",
+			"/tail.svg",
+			"/ts.svg",
+			"/re.svg",
+			"/convex.svg",
+		],
+		link: "https://ypares.vercel.app/",
+	},
 ];
 
 export const testimonials = [
