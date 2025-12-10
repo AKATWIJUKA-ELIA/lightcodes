@@ -10,10 +10,11 @@ import { TiTick } from "react-icons/ti";
 import React from "react";
 
 interface ContactProps {
-  onClose?: () => void;
-  onMinimize?: () => void;
-  onMaximize?: () => void;
-  size?: "minimized" | "normal" | "maximized";
+	onClose?: () => void;
+	onMinimize?: () => void;
+	onMaximize?: () => void;
+	size?: "minimized" | "normal" | "maximized";
+	onDoubleClick?: () => void;
 }
 
 const Contact = ({
@@ -21,6 +22,7 @@ const Contact = ({
   onMinimize,
   onMaximize,
   size = "normal",
+        onDoubleClick,
 }: ContactProps) => {
   const [sending, setsending] = useState(false)
   const [Alert, setAlert] = useState(false)
@@ -193,6 +195,7 @@ const Contact = ({
         isDragging ? "duration-0" : "duration-300"
       } ease-in-out ${isDragging ? "select-none" : ""}`}
       style={dragStyle}
+        onDoubleClick={onDoubleClick}
     >
       {/* macOS Window Controls */}
       <div

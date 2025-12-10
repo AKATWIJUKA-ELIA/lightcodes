@@ -9,6 +9,7 @@ interface GridProps {
   onMinimize?: () => void;
   onMaximize?: () => void;
   size?: "minimized" | "normal" | "maximized";
+        onDoubleClick?: () => void;
 }
 
 const Grid = ({
@@ -16,6 +17,7 @@ const Grid = ({
   onMinimize,
   onMaximize,
   size = "normal",
+        onDoubleClick,
 }: GridProps) => {
   // Dragging state
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -138,6 +140,7 @@ const Grid = ({
         className={currentStyle.header}
         onMouseDown={handleMouseDown}
         onTouchStart={handleTouchStart}
+        onDoubleClick={onDoubleClick}
       >
         <div
           data-no-drag
