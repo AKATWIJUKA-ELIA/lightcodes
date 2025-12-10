@@ -203,7 +203,7 @@ const RecentProjects = ({
       {/* Content - hidden when minimized */}
       <div className={`${currentStyle.content} p-4`}>
         <div className={`${size === "maximized" ? "py-10" : "py-20"} relative z-0`} id="projects">
-          <h1 className="heading">
+          <h1 className="heading sticky top-8 z-50 p-4 rounded-t-md  backdrop-blur-2xl">
             A small selection of <span className="text-purple">recent projects</span>
           </h1>
           <div

@@ -158,8 +158,8 @@ const Hero = () => {
                     <span className="text-sm sm:text-lg">🚀</span>
                   </div>
                   <div>
-                    <p className="text-lg sm:text-xl font-bold text-white">50+</p>
-                    <p className="text-[10px] sm:text-xs text-slate-400">Projects Done</p>
+                    <p className="text-lg sm:text-xl font-bold text-white">Deploy it</p>
+                    <p className="text-[10px] sm:text-xs text-slate-400">fast</p>
                   </div>
                 </div>
               </div>
@@ -170,8 +170,8 @@ const Hero = () => {
                     <span className="text-sm sm:text-lg">⭐</span>
                   </div>
                   <div>
-                    <p className="text-lg sm:text-xl font-bold text-white">5+</p>
-                    <p className="text-[10px] sm:text-xs text-slate-400">Years Exp.</p>
+                    <p className="text-lg sm:text-xl font-bold text-white">Think of it</p>
+                    <p className="text-[10px] sm:text-xs text-slate-400">and We&apos;ll</p>
                   </div>
                 </div>
               </div>

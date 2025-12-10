@@ -72,23 +72,25 @@ export const gridItems = [
 export const projects = [
 	{
 		id: 1,
-		title: "Online B2B Marketplace",
-		des: "Join the Online Marketplace And get a chance to advertise your Business",
-		img: "/e-light.png",
+		title: "ShopCheap",
+		des: `A multiVendor Saas Application that enables Sellers to upload their products and market their products so that they can grow their businesses through reaching a wider audience of potential buyers / customers.`,
+		img: "/projects/shopcheap.png",
 		iconLists: [
-			"/django.svg",
-			"/Postgresql.png",
-			"/javascript.svg",
-			"/html.jpg",
-			"/bootstrap.svg",
+			"/next.svg",
+			"/tail.svg",
+			"/ts.svg",
+			"/re.svg",
+			"/convex.svg",
+                        "/redis.png",
 		],
-		link: "https://e-light.onrender.com/home/",
+		link: "https://shopcheapug.com",
 	},
+
 	{
 		id: 2,
-		title: "ShopCheap",
-		des: "An Online Store, your one-stop online destination for quality, value, and convenience.",
-		img: "/shopcheap.png",
+		title: "O-Post",
+		des: "News App",
+		img: "/projects/o_post.png",
 		iconLists: [
 			"/next.svg",
 			"/tail.svg",
@@ -96,10 +98,25 @@ export const projects = [
 			"/re.svg",
 			"/convex.svg",
 		],
-		link: "https://shopcheap.vercel.app/",
+		link: "https://theopost.com/",
 	},
+
 	{
 		id: 3,
+		title: "Facial Recognition Class Attendance",
+		des: "This Project implements Facial Recongnition to capture Attendance of Student, solving the problem of students capturing attendance on behalf of others",
+		img: "/projects/biometric.png",
+		iconLists: [
+			"/next.svg",
+			"/tail.svg",
+			"/ts.svg",
+			"/re.svg",
+			"/convex.svg",
+		],
+		link: "#",
+	},
+	{
+		id: 4,
 		title: "Bugema University Website",
 		des: "Bugema University Website Front End.",
 		img: "/bugenauinv.png",
@@ -107,7 +124,7 @@ export const projects = [
 		link: "https://www.bugemauniv.ac.ug/",
 	},
 	{
-		id: 4,
+		id: 5,
 		title: "ypa Restaurant",
 		des: "An online food ordering platform...",
 		img: "/ypa.png",
@@ -224,28 +241,28 @@ export const workExperience = [
 ];
 
 export const socialMedia = [
-  {
-    id: 1,
-    name:"github",
-    link:"https://github.com/AKATWIJUKA-ELIA",
-    img: "/git.svg",
-  },
-  {
-    id: 2,
-    name:"twitter",
-    link:"https://x.com/The_light_tech",
-    img: "/twit.svg",
-  },
-  {
-    id: 3,
-    name:"linkedin",
-    link:"https://www.linkedin.com/in/akatwijuka-elia-64066b295/",
-    img: "/linkedin2.png",
-  },
-    {
-    id: 4,
-    name:"stack-overflow",
-    link:"https://stackoverflow.com/users/22681878",
-    img: "/stack.png",
-  },
+	{
+		id: 1,
+		name: "github",
+		link: "https://github.com/AKATWIJUKA-ELIA",
+		img: "/git.svg",
+	},
+	{
+		id: 2,
+		name: "twitter",
+		link: "https://x.com/The_light_tech",
+		img: "/twit.svg",
+	},
+	{
+		id: 3,
+		name: "linkedin",
+		link: "https://www.linkedin.com/in/akatwijuka-elia-light/",
+		img: "/linkedin2.png",
+	},
+	{
+		id: 4,
+		name: "stack-overflow",
+		link: "https://stackoverflow.com/users/22681878",
+		img: "/stack.png",
+	},
 ];

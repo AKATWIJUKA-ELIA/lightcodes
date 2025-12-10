@@ -138,7 +138,7 @@ const Footer = () => {
 								{isOpen && (
 									<div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-blue-400 rounded-full" />
 								)}
-
+                                                                
 								<span className="absolute z-50 -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
 									{item.label}
 								</span>
