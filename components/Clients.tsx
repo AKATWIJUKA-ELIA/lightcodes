@@ -6,10 +6,11 @@ import { companies, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
 interface ClientsProps {
-  onClose?: () => void;
-  onMinimize?: () => void;
-  onMaximize?: () => void;
-  size?: "minimized" | "normal" | "maximized";
+	onClose?: () => void;
+	onMinimize?: () => void;
+	onMaximize?: () => void;
+	size?: "minimized" | "normal" | "maximized";
+	onDoubleClick?: () => void;
 }
 
 const Clients = ({
@@ -17,6 +18,7 @@ const Clients = ({
   onMinimize,
   onMaximize,
   size = "normal",
+        onDoubleClick,
 }: ClientsProps) => {
   // Dragging state
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -133,6 +135,7 @@ const Clients = ({
         isDragging ? "duration-0" : "duration-300"
       } ease-in-out ${isDragging ? "select-none" : ""}`}
       style={dragStyle}
+      onDoubleClick={onDoubleClick}
     >
       {/* macOS Window Controls */}
       <div

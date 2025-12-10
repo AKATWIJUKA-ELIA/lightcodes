@@ -8,10 +8,11 @@ import Interests from '@/components/about/interests';
 
 
 interface AboutProps {
-  onClose?: () => void;
-  onMinimize?: () => void;
-  onMaximize?: () => void;
-  size?: "minimized" | "normal" | "maximized";
+	onClose?: () => void;
+	onMinimize?: () => void;
+	onMaximize?: () => void;
+	size?: "minimized" | "normal" | "maximized";
+	onDoubleClick?: () => void;
 }
 
 const About = ({
@@ -19,6 +20,7 @@ const About = ({
   onMinimize,
   onMaximize,
   size = "normal",
+        onDoubleClick,
 }: AboutProps) => {
     const [activeTab, setActiveTab] = useState('Education');
 
@@ -137,6 +139,7 @@ const About = ({
           isDragging ? "duration-0" : "duration-300"
         } ease-in-out ${isDragging ? "select-none" : ""}`}
         style={dragStyle}
+        onDoubleClick={onDoubleClick}
       >
         {/* macOS Window Controls */}
         <div
