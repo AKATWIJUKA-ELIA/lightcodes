@@ -115,14 +115,14 @@ export const projects = [
 		],
 		link: "https://biometric-2.vercel.app",
 	},
-	{
-		id: 4,
-		title: "Bugema University Website",
-		des: "Bugema University Website Front End.",
-		img: "/bugenauinv.png",
-		iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
-		link: "https://www.bugemauniv.ac.ug/",
-	},
+	// {
+	// 	id: 4,
+	// 	title: "Bugema University Website",
+	// 	des: "Bugema University Website Front End.",
+	// 	img: "/bugenauinv.png",
+	// 	iconLists: ["/re.svg", "/tail.svg", "/ts.svg"],
+	// 	link: "https://www.bugemauniv.ac.ug/",
+	// },
 	{
 		id: 5,
 		title: "ypa Restaurant",
@@ -206,14 +206,14 @@ export const companies = [
 ];
 
 export const workExperience = [
-//   {
-//     id: 1,
-//     title: "Web Developer - Bugema University ",
-//     link:"https://www.bugemauniv.ac.ug/",
-//     desc: "I assisted as  in the development of the new school's website  as a FrontEnd Engineer  using Next.js, enhancing interactivity.",
-//     className: "md:col-span-2",
-//     thumbnail: "/exp1.svg",
-//   },
+  {
+    id: 1,
+    title: "Web Developer - Bugema University ",
+    link:"https://www.bugemauniv.ac.ug/",
+    desc: "I assisted as  in the development of the new school's website  as a FrontEnd Engineer  using Next.js, enhancing interactivity.",
+    className: "md:col-span-2",
+    thumbnail: "/exp1.svg",
+  },
   {
     id: 2,
     title: "Mobile App Dev - JSM Tech",
